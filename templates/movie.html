@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="blog-post">
+        <h1>{{movie}}</h1>
+        <h4 class="blog-post-meta">Crowd Score:</h4>
+        <div class="Stars" style="--rating: {{avg_rating}};" aria-label="{{avg_rating}} out of 5.">
+        <hr>
+    </div>
+    {% for review in reviews %}
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{ review.title }}</h2>
+        <p class="blog-post-meta">{{ review.date }} by {{ review.author }}</p>
+        <p>{{ review.review }}</p>
+        <div class="Stars" style="--rating: {{review.rating}};" aria-label="{{review.rating}} out of 5.">
+        <hr>
+    </div>
+  {% endfor %}
+{% endblock %}
