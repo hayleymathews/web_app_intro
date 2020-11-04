@@ -6,6 +6,10 @@
       <p class="blog-post-meta">{{ review.date }} by {{ review.author }}</p>
       <p>{{ review.review }}</p>
       <div class="Stars" style="--rating: {{review.rating}};" aria-label="Rating of this product is {{review.rating}} out of 5.">
+      	<form method="POST", action="/review/delete" role="form">
+      		<br>
+      		<button type="submit" class="btn btn-danger" name="review_id" value={{review.title}}>Delete</button>
+      	</form>	
       <hr>
     </div>
   {% endfor %}

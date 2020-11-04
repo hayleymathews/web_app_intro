@@ -51,6 +51,12 @@ def search():
                            avg_rating=rating,
                            reviews=reviews)
 
+@app.route('/review/delete', methods=['POST'])
+def delete_review():
+    print("yo momma")
+    post_data = request.form.to_dict()
+    print(post_data)
+    return {"what up bros":"what up my shnoodle"}
 
 if __name__ == '__main__':
     app.run(debug=True)
